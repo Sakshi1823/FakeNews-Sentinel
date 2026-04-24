@@ -1,39 +1,88 @@
-# 📰 FakeNews-Sentinel
+<h1 align="center">🛡️ FakeNews-Sentinel</h1>
 
-### **Introduction**
-FakeNews-Sentinel is a Machine Learning-powered detection engine designed to identify and classify misinformation in digital news articles. By utilizing Natural Language Processing (NLP) and supervised learning algorithms, the system analyzes linguistic patterns and metadata to distinguish between authentic reporting and fabricated content. This project serves as a foundational tool for building trustworthy information ecosystems.
+<p align="center">
+  <b>NLP-powered misinformation detection engine — classifies news articles as real or fake using machine learning</b>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
+  <img src="https://img.shields.io/badge/NLTK-NLP-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+</p>
 
 ---
 
-### **🛠️ Tech Stack**
+## What This Does
+
+FakeNews-Sentinel is an ML classification engine that takes a news article as input and predicts whether it is real or fabricated. It uses **TF-IDF vectorization** to convert raw text into numerical features and runs it through a **Passive Aggressive Classifier** — a fast online-learning algorithm well-suited for large text datasets.
+
+The system preprocesses raw text (stop-word removal, punctuation stripping) and uses linguistic pattern recognition to flag the kind of sensationalist phrasing common in misinformation.
+
+---
+
+## 🛠️ Tech Stack
 
 | Layer | Technology |
-| :--- | :--- |
-| **Language** | Python 3.x |
-| **Data Processing** | Pandas, NumPy |
-| **Machine Learning** | Scikit-Learn |
-| **NLP** | NLTK / TF-IDF Vectorization |
-| **Environment** | Jupyter Notebooks / ML Scripts |
+|---|---|
+| Language | Python 3.x |
+| Data Processing | Pandas, NumPy |
+| Machine Learning | Scikit-Learn — Passive Aggressive Classifier, Naive Bayes |
+| NLP | NLTK, TF-IDF Vectorization |
+| Data | Labeled CSV datasets (real vs fake news) |
+| Environment | Jupyter Notebooks + ML Scripts |
 
 ---
 
-### **📂 Project Structure**
+## 📂 Project Structure
 
-* **`/ML_Scripts`**: Contains the core logic for the detection engine, including data preprocessing, feature engineering, and model training scripts (Passive Aggressive Classifier / Naive Bayes).
-* **`/CSVs`**: The data warehouse containing categorized datasets of labeled news articles used for training and testing model accuracy.
-* **`README.md`**: Project documentation and technical overview.
-
----
-
-### **✨ Key Features**
-
-* **Advanced Text Vectorization:** Implements **TF-IDF (Term Frequency-Inverse Document Frequency)** to convert raw text into high-dimensional numerical data for precise model analysis.
-* **Automated Preprocessing:** Features a pipeline for noise reduction, including stop-word removal and punctuation stripping, to improve classification accuracy.
-* **Linguistic Pattern Recognition:** Analyzes the "weight" of specific phrases and words commonly found in clickbait and sensationalist media.
-* **Performance Metrics:** Evaluates model success using Confusion Matrices and Accuracy Scores to ensure a high rate of true-positive detection.
+```
+FakeNews-Sentinel/
+│
+├── ML_Scripts/         # Core engine — preprocessing, feature engineering, model training
+├── CSVs/               # Labeled datasets for training and testing
+└── README.md
+```
 
 ---
 
-### **🚀 Future Roadmap**
-* **Real-time API:** Transitioning the ML scripts into a Flask/FastAPI backend.
-* **Agentic Verification:** Integrating with **CrewAI** to allow the system to browse the live web for fact-checking.
+## ⚙️ How It Works
+
+1. **Data Loading** — labeled CSV datasets of real and fake news articles are loaded via Pandas
+2. **Preprocessing** — noise reduction pipeline: stop-word removal, punctuation stripping, lowercasing
+3. **Vectorization** — TF-IDF converts text into high-dimensional numerical vectors
+4. **Training** — Passive Aggressive Classifier is trained on the vectorized data
+5. **Evaluation** — model performance measured via Confusion Matrix and Accuracy Score
+
+---
+
+## ✨ Key Features
+
+- TF-IDF vectorization for precise linguistic analysis
+- Automated preprocessing pipeline — no manual cleaning needed
+- Tested with Passive Aggressive Classifier and Naive Bayes (compare both)
+- Performance evaluation via Confusion Matrix and Accuracy Score
+- Modular ML scripts — easy to extend with new models
+
+---
+
+## 🚀 Roadmap
+
+- [ ] Flask/FastAPI REST API wrapper for real-time predictions
+- [ ] Browser extension for on-the-fly article scanning
+- [ ] CrewAI integration for live web fact-checking
+
+---
+
+## 🏃 Run Locally
+
+```bash
+git clone https://github.com/Sakshi1823/FakeNews-Sentinel.git
+cd FakeNews-Sentinel
+pip install pandas numpy scikit-learn nltk
+# Open Jupyter or run scripts from ML_Scripts/
+```
+
+---
+
+<p align="center">Built by <a href="https://github.com/Sakshi1823">Sakshi Hingamire</a> </p>
