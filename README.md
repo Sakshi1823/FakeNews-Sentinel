@@ -85,4 +85,3 @@ pip install pandas numpy scikit-learn nltk
 
 ---
 
-<p align="center">Built by <a href="https://github.com/Sakshi1823">Sakshi Hingamire</a> </p>
