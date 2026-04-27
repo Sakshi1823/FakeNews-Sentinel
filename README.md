@@ -13,7 +13,7 @@
 
 ---
 
-## What This Does
+## What This Does ??
 
 FakeNews-Sentinel is an ML classification engine that takes a news article as input and predicts whether it is real or fabricated. It uses **TF-IDF vectorization** to convert raw text into numerical features and runs it through a **Passive Aggressive Classifier** — a fast online-learning algorithm well-suited for large text datasets.
 
